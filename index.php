@@ -1,3 +1,6 @@
+<?php
+require('functions.php');
+?>
 <!doctype html>
 <html lang="pl">
 
@@ -67,30 +70,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Maszynką</td>
-                <td>30 min</td>
-                <td>30 zł</td>
-              </tr>
-              <tr>
-                <td>Klasyczne</td>
-                <td>60 min</td>
-                <td>40 zł</td>
-              </tr>
-              <tr>
-                <td>Broda</td>
-                <td>30 min</td>
-                <td>20 zł</td>
-              </tr>
-              <tr>
-                <td>klasyczne + broda</td>
-                <td>60 min</td>
-                <td>50 zł</td>
-              </tr>
+              <?php
+                $rows = get_hairCut();
+                foreach($rows as $r){
+                  echo '<tr>';
+                  echo '<td>'.$r['name'].'</td>';
+                  echo '<td>'.$r['price'].' min'.'</td>';
+                  echo '<td>'.$r['time'].' zł'.'</td>';
+                  echo '</tr>';
+                }
+              ?>
             </tbody>
           </table>
         </div>
-        <a href="" class="mb-5 btn btn-primary btn-lg">REZERWUJ</a>
+        <button href="" class="mb-5 btn btn-primary btn-lg" onclick="smoothScroll('#reservation')">REZERWUJ</button>
       </div>
     </div>
   </section>
