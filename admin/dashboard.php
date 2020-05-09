@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] !==true)
+{
+die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
+}
+?>
+
 <!doctype html>
 <html lang="pl">
 
@@ -17,7 +25,7 @@
     <div class="col-12">
         <h1 class="text-center text-white font-weight-bold p-5">REZERWACJE</h1>
         <div class="text-center text-white">
-            <a href="" class="m-2 text-white">POWRÓT</a> | <a href="" class="m-2 text-white">WYLOGUJ</a>
+            <a href="../index.php" class="m-2 text-white">POWRÓT</a> | <a href="logout.php" class="m-2 text-white">WYLOGUJ</a>
         </div>
     </div>
 
