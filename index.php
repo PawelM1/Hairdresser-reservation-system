@@ -7,13 +7,14 @@ require_once('php/functions.php');
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable-no">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <title>VLOSACE Barber</title>
 </head>
@@ -58,9 +59,9 @@ require_once('php/functions.php');
   <!--Price_List-->
   <section id="price_list">
     <div class="container-fluid">
-      <h1 class="text-center p-5 text-white font-weight-bold">CENNIK</h1>
+      <h1 class="text-center pt-5 pb-5 text-white font-weight-bold">CENNIK</h1>
       <div class="row d-flex justify-content-center">
-        <div class="col-12 d-flex justify-content-center font-weight-bold p-5">
+        <div class="col-12 d-flex justify-content-center font-weight-bold pt-5 pb-5">
           <table class="table table-dark">
             <thead class="thead-light">
               <tr>
@@ -155,7 +156,7 @@ require_once('php/functions.php');
   <!--About-->
   <section id="about">
     <div class="container-fluid">
-      <h1 class="text-center p-5 text-white font-weight-bold">KONTAKT</h1>
+      <h1 class="text-center pt-5 pb-5 text-white font-weight-bold">KONTAKT</h1>
       <div class="row text-dark">
         <div class="col-lg-6 col-md-12 mb-5">
           <!--Google map-->
@@ -203,9 +204,34 @@ require_once('php/functions.php');
   <!--About-->
   <button onclick="smoothScroll('header')" id="up-button"></button>
   <!--Footer-->
-  <div class="col-12">
-    <h6 class="text-center font-weight-bold p-1">Technologie Internetowe</h6>
-  </div>
+  <Footer class="page-footer font-small bg-dark">
+      <div class="container">
+          <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-center">
+                  <p>
+                    <a href="https://pl-pl.facebook.com">
+                    <i class = "fa fa-facebook p-4 fa-3x"></i>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://twitter.com">
+                    <i class = "fa fa-twitter p-4 fa-3x"></i>
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://www.instagram.com/?hl=pl">
+                    <i class = "fa fa-instagram p-4 fa-3x"></i>
+                    </a>
+                  </p>
+                </div>
+            </div>
+          </div>              
+      </div>
+      <div class="footer-copyright text-center text-white font-weight-bold">
+          Technologie Internetowe
+      </div>            
+  </Footer>
   <!--Footer-->
   <!-- Optional JavaScript -->
   <script src="js/script.js"></script>
