@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once(__DIR__.'\..\php\functions.php');
 if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] !==true)
 {
 die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
@@ -42,27 +43,19 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Nowak</td>
-                        <td>Maszynka</td>
-                        <td>30</td>
-                        <td>12.04.20 09:00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Kowalski</td>
-                        <td>Broda</td>
-                        <td>20</td>
-                        <td>12.04.20 10:00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Psikuta</td>
-                        <td>Klasyncze</td>
-                        <td>50</td>
-                        <td>12.04.20 11:00</td>
-                    </tr>
+                    <?php
+                        $rows = get_reservation();
+                        for($i = 0; $i < count($rows);$i++)
+                        {
+                            echo '<tr>';
+                            echo '<th scope="row">'.($i+1).'</th>';
+                            echo '<td>'.$rows[$i]['surname'].'</td>';
+                            echo '<td>'.$rows[$i]['name'].'</td>';
+                            echo '<td>'.$rows[$i]['price'].'</td>';
+                            echo '<td>'.$rows[$i]['date'].'</td>';
+                            echo '</tr>';
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>

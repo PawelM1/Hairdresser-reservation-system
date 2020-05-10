@@ -1,5 +1,5 @@
 <?php
-require('functions.php');
+require_once('php/functions.php');
 ?>
 <!doctype html>
 <html lang="pl">
@@ -75,8 +75,8 @@ require('functions.php');
                 foreach($rows as $r){
                   echo '<tr>';
                   echo '<td>'.$r['name'].'</td>';
-                  echo '<td>'.$r['price'].' min'.'</td>';
-                  echo '<td>'.$r['time'].' zł'.'</td>';
+                  echo '<td>'.$r['time'].' min'.'</td>';
+                  echo '<td>'.$r['price'].' zł'.'</td>';
                   echo '</tr>';
                 }
               ?>
@@ -117,10 +117,12 @@ require('functions.php');
               <label for="cut">Rodzaj strzyżenia</label>
               <select name="cut" id="cut" class="form-control">
                 <option value="" disabled>Rodzaj strzyżenia</option>
-                <option value="1">Strzyżenie maszynką</option>
-                <option value="2">Strzyżenie klasyczne</option>
-                <option value="3">Strzyżenie brody</option>
-                <option value="4">Strzyżenie + broda</option>
+                <?php
+                  $row = get_hairCut();
+                  foreach($row as $r){
+                    echo '<option value = "'.$r['id'].'">'.$r['name'].'</option>';
+                  }
+                  ?>
               </select>
             </div>
             <div class="row">
@@ -139,6 +141,9 @@ require('functions.php');
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="col-12 mt-4">
+                  <input type="submit" value="ZAREZERWUJ" class = "d-flex ml-auto mr-auto btn btn-danger">
               </div>
             </div>
           </form>
