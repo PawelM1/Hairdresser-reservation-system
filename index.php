@@ -94,7 +94,7 @@ require_once('php/functions.php');
       <h1 class="text-center p-5 text-white font-weight-bold">ZAREZERWUJ</h1>
       <div class="row">
         <div class="col-12 d-flex justify-content-center p-5 text-white">
-          <form action="" method="POST">
+          <form action="reserve.php" method="POST">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
@@ -111,7 +111,7 @@ require_once('php/functions.php');
             </div>
             <div class="form-group">
               <label for="phone">Telefon</label>
-              <input type="tel" class="form-control" placeholder="Podaj nr telefonu" required>
+              <input type="tel" name = "phone" class="form-control" placeholder="Podaj nr telefonu" required>
             </div>
             <div class="form-group">
               <label for="cut">Rodzaj strzyżenia</label>
@@ -129,7 +129,7 @@ require_once('php/functions.php');
               <div class="col-sm-5">
                 <div class="form-group">
                   <label for="date">Data</label>
-                  <input type="date" class="form-control" name="date" id="date" required>
+                  <input type="datetime-local" class="form-control" name="date" id="date" required>
                 </div>
               </div>
               <div class="col-sm-7">
@@ -137,7 +137,7 @@ require_once('php/functions.php');
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="hour">Godzina</label>
-                      <input type="number" class="form-control" name="Godzina" id="hour" min="8" max="15" required>
+                      <input type="number" class="form-control" name="hour" id="hour" min="8" max="15" required>
                     </div>
                   </div>
                 </div>
