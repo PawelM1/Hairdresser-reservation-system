@@ -94,7 +94,7 @@ require_once('php/functions.php');
       <h1 class="text-center p-5 text-white font-weight-bold">ZAREZERWUJ</h1>
       <div class="row">
         <div class="col-12 d-flex justify-content-center p-5 text-white">
-          <form action="reserve.php" method="POST">
+          <form action="/php/reserve.php" method="POST">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">

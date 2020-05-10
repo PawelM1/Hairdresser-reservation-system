@@ -38,7 +38,7 @@ function reserve($name, $surname, $phone,$typeHairCut,$termin,$hour){
                 if($statment_2 = $mysqli->prepare($sql_2)){
                     if($statment_2->bind_param('iiss',$client_id,$typeHairCut,$from_date,$to_date)){
                         $statment_2->execute();
-                        header("Location:index.php");
+                        header("Location: ../index.php");
                     }
                 }
         }

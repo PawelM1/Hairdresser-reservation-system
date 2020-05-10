@@ -19,7 +19,7 @@ if(!empty($_POST)){
     if($termin < $today || $termin > $end_date){
         die('Niepoprawna data');
     }
-    require_once('php/functions.php');
+    require_once('functions.php');
     reserve($name,$surname,$phone,$typeHairCut,$termin,$hour);
 }
 ?>
