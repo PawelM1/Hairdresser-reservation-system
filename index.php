@@ -151,7 +151,7 @@ function getAvailableHours(select_date) {
                   <div class="col-sm-6">
                     <div class="form-group">
                      <label for="Hour">Godzina</label>
-                      <select name="Hour"class="form-control" id="Hour">
+                      <select name="Hour"class="form-control" id="Hour" require>
                       <!--Fill by available hour from DB-->  
                       </select>
                     </div>
@@ -197,7 +197,7 @@ function getAvailableHours(select_date) {
                 <div class="text-center">
                   <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
                   <h4 class="text-uppercase">Lokalizacja</h4>
-                  <address>Łysinowo</address>
+                  <address>Łysinkowo</address>
                 </div>
               </div>
             </div>
@@ -244,7 +244,7 @@ function getAvailableHours(select_date) {
           </div>              
       </div>
       <div class="footer-copyright text-center text-white font-weight-bold">
-          Technologie Internetowe
+          Strona wykonana w ramach projektu z przedmiotu: Technologie Internetowe
       </div>            
   </Footer>
   <!--Footer-->
