@@ -81,7 +81,6 @@ function getAvailableHours(select_date) {
             <thead class="thead-light">
               <tr>
                 <th scope="col">Rodzaj strzyżenia</th>
-                <th scope="col">Czas</th>
                 <th scope="col">Cena</th>
               </tr>
             </thead>
@@ -91,7 +90,6 @@ function getAvailableHours(select_date) {
                 foreach($rows as $r){
                   echo '<tr>';
                   echo '<td>'.$r['name'].'</td>';
-                  echo '<td>'.$r['time'].' min'.'</td>';
                   echo '<td>'.$r['price'].' zł'.'</td>';
                   echo '</tr>';
                 }
@@ -110,7 +108,7 @@ function getAvailableHours(select_date) {
       <h1 class="text-center p-5 text-white font-weight-bold">ZAREZERWUJ</h1>
       <div class="row">
         <div class="col-12 d-flex justify-content-center p-5 text-white">
-          <form action="/php/reserve.php" method="POST">
+          <form action="php/reserve.php" method="POST">
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">

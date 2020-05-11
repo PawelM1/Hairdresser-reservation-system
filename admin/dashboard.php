@@ -40,6 +40,7 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
                         <th scope="col">Rodzaj strzyżenia</th>
                         <th scope="col">Cena</th>
                         <th scope="col">Data</th>
+                        <th scope="col">Godzina</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,6 +54,7 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
                             echo '<td>'.$rows[$i]['name'].'</td>';
                             echo '<td>'.$rows[$i]['price'].'</td>';
                             echo '<td>'.$rows[$i]['date'].'</td>';
+                            echo '<td>'.$rows[$i]['Hour'].'</td>';
                             echo '</tr>';
                         }
                     ?>
