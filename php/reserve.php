@@ -14,11 +14,23 @@ if(!empty($_POST)){
         }
     }
 
+    //Sprawdzanie czy nie rezerwujemy daty wcześniejszej niż dzisiejszy dzień i dalszej niż 20 dni
     $today = date('Y-m-d');
     $end_date = date('Y-m-d', strtotime($today.'+ 20 days')); 
     if($termin < $today || $termin > $end_date){
         die('Niepoprawna data. Maksymalnie można zarezerwować wiztę do 21 dni od dzisaj');
     }
+    
+
+    //Sprawdzanie czy nie jest to weekend
+    $data = $termin; 
+    $day = date("l",strtotime($data));
+    if($day == 'Sunday' || $day == 'Saturday')
+    {
+        die('W weekendy nie pracujemy');
+    }
+
+
     require_once('functions.php');
     reserve($name,$surname,$phone,$typeHairCut,$termin,$hour);
 }
