@@ -7,7 +7,7 @@ require_once('php/functions.php');
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable-no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -17,9 +17,24 @@ require_once('php/functions.php');
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <title>VLOSACE Barber</title>
+
+<!--Script data fill available hour to reservation visit-->
+<script>
+function getAvailableHours(select_date) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("Hour").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "php/availableHours.php?q="+select_date, true);
+    xmlhttp.send();
+}
+</script>
 </head>
 
 <body>
+<span id="txtHint"></span>
   <!--header-->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark pl-5">
@@ -130,15 +145,17 @@ require_once('php/functions.php');
               <div class="col-sm-5">
                 <div class="form-group">
                   <label for="date">Data</label>
-                  <input type="datetime-local" class="form-control" name="date" id="date" required>
+                  <input type="date" class="form-control" name="date" id="date" onchange="getAvailableHours(this.value)" required>
                 </div>
               </div>
               <div class="col-sm-7">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="hour">Godzina</label>
-                      <input type="number" class="form-control" name="hour" id="hour" min="8" max="15" required>
+                     <label for="Hour">Godzina</label>
+                      <select name="Hour"class="form-control" id="Hour">
+                      <!--Fill by available hour from DB-->  
+                      </select>
                     </div>
                   </div>
                 </div>
