@@ -1,5 +1,5 @@
 <?php
-
+require_once(__DIR__.'/../admin/sql_connect.php');
 if(!empty($_POST)){
     $name = trim($_POST['name']);
     $surname = trim($_POST['surname']);
