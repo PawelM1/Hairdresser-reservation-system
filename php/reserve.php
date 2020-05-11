@@ -6,7 +6,7 @@ if(!empty($_POST)){
     $phone = trim($_POST['phone']);
     $typeHairCut = $_POST['cut'];
     $termin = $_POST['date'];
-    $hour = $_POST['hour'];
+    $hour = $_POST['Hour'];
 
     foreach($_POST as $p){
         if($p == ''){
