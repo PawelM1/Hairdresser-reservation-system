@@ -25,8 +25,7 @@ if(!empty($_POST)){
     //Sprawdzanie czy nie jest to weekend
     $data = $termin; 
     $day = date("l",strtotime($data));
-    if($day == 'Sunday' || $day == 'Saturday')
-    {
+    if($day == 'Sunday' || $day == 'Saturday'){
         die('W weekendy nie pracujemy');
     }
 
