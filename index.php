@@ -146,7 +146,7 @@ function getAvailableHours(select_date) {
             </div>
             <div class="form-group">
               <label for="phone">Telefon</label>
-              <input type="tel" name = "phone" class="form-control" placeholder="Podaj nr telefonu" required>
+              <input type="tel" pattern="[0-9]{9}" placeholder="Format: 9 cyfr" name = "phone" class="form-control" placeholder="Podaj nr telefonu" required>
             </div>
             <div class="form-group">
               <label for="cut">Rodzaj strzyżenia</label>
