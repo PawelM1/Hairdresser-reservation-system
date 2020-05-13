@@ -66,7 +66,7 @@ function make_pay($name, $surname,$phone,$typeHairCut, $reservation_id)
 
     require_once(__DIR__.'\..\openpayu_php\lib\openpayu.php');
     require_once(__DIR__.'\..\openpayu_php\examples\config.php');
-    $order['continueUrl'] = 'http://localhost/barber/index.php'; //customer will be redirected to this page after successfull payment
+    $order['continueUrl'] = 'http://localhost/barber/reservation_status_page/successful.php'; //customer will be redirected to this page after successfull payment
     $order['notifyUrl'] = 'http://localhost/';
     $order['customerIp'] = $_SERVER['REMOTE_ADDR'];
     $order['merchantPosId'] = OpenPayU_Configuration::getMerchantPosId();

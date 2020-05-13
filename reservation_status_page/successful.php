@@ -1,3 +1,9 @@
+<?php
+if(isset($_GET['error']))
+header('Location:../reservation_status_page/unsuccessful.php?error=' . $_GET['error']);
+?>
+?>
+header('Location:../reservation_status_page/unsuccessful.php?error=' . $_GET['error']);
 <!DOCTYPE html>
 <html lang="pl">
 <head>
