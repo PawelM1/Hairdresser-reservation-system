@@ -56,7 +56,6 @@ function getAvailableHours(select_date) {
 </head>
 
 <body>
-<span id="txtHint"></span>
   <!--header-->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark pl-5">
@@ -84,7 +83,7 @@ function getAvailableHours(select_date) {
     <div class="container h-75 d-flex align-items-center">
       <div class="row">
         <div class="col-12">
-          <h1 class="text-white font-weight-bold display-4 mt-3 "><i>VLOSACE BARBER</h1></i>
+          <h1 class="title display-4 mt-3 ">VLOSACE BARBER</h1>
         </div>
         <div class="col-12">
           <h4 class="text-white font-weight-bold ">Może nie najtaniej, ale jako tako</h4>
