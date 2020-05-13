@@ -15,7 +15,7 @@ function get_hairCut()
 function get_reservation()
 {
     global $mysqli;
-    $sql = "SELECT client.surname, haircut.name, haircut.price, reservation.date,hours_open.Hour FROM reservation INNER JOIN client ON reservation.client_id = client.id INNER JOIN haircut ON reservation.haircut_id = haircut.id INNER JOIN hours_open ON reservation.hour_id = hours_open.id ORDER BY reservation.date";
+    $sql = "SELECT client.surname, client.phone_number, haircut.name, haircut.price, reservation.date,hours_open.Hour FROM reservation INNER JOIN client ON reservation.client_id = client.id INNER JOIN haircut ON reservation.haircut_id = haircut.id INNER JOIN hours_open ON reservation.hour_id = hours_open.id ORDER BY reservation.date";
     $result = $mysqli->query($sql);
     $rows = $result->fetch_all(MYSQLI_ASSOC);
     return $rows;
@@ -25,7 +25,6 @@ function get_reservation()
 function reserve($name, $surname, $phone,$typeHairCut,$termin,$hour)
 {
     global $mysqli;
-
     $sql = "INSERT INTO client (`name`, `surname`,`phone_number`) VALUES(?,?,?)";
     if($statment = $mysqli->prepare($sql)){
         if($statment->bind_param('sss',$name,$surname,$phone)){

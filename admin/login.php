@@ -1,17 +1,17 @@
 <?php
-    if(!empty($_POST)){
-
-        session_start();
-
-        if(isset($_SESSION['isLogged']) && $_SESSION['isLogged'] === true){
-            header('Location: dashboard.php');
-        }
+if(!empty($_POST)){
+    session_start();
+    if(isset($_SESSION['isLogged']) && $_SESSION['isLogged'] === true)
+    {
+        header('Location: dashboard.php');
+    }
         
-        require('sql_connect.php');
+    require('sql_connect.php');
     $nick = trim($_POST['nick']);
     $password = hash('whirlpool',trim($_POST['password']));
 
-    if($nick == "" || $password == ""){
+    if($nick == "" || $password == "")
+    {
         die("Nick lub hasło puste");
     }
     

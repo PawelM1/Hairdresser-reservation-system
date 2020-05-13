@@ -37,6 +37,7 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
                     <tr>
                         <th scope="col"></th>
                         <th scope="col">Zarezerwował</th>
+                        <th scope="col">Kontakt</th>
                         <th scope="col">Rodzaj strzyżenia</th>
                         <th scope="col">Cena</th>
                         <th scope="col">Data</th>
@@ -51,6 +52,7 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
                             echo '<tr>';
                             echo '<th scope="row">'.($i+1).'</th>';
                             echo '<td>'.$rows[$i]['surname'].'</td>';
+                            echo '<td>'.$rows[$i]['phone_number'].'</td>';
                             echo '<td>'.$rows[$i]['name'].'</td>';
                             echo '<td>'.$rows[$i]['price'].'</td>';
                             echo '<td>'.$rows[$i]['date'].'</td>';
