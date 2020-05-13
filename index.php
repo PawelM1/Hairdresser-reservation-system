@@ -25,6 +25,23 @@ require_once('php/functions.php');
 <!--Script data fill available hour to reservation visit-->
 <script>
 function getAvailableHours(select_date) {
+  //data for date validation
+  var d = new Date(select_date);
+  var tommorow = new Date(new Date().getTime()-(1*24*60*60*1000));
+  var to_date = new Date(new Date().getTime()+(21*24*60*60*1000));
+  
+  if(d < tommorow){
+    alert("Nie możesz zarezerwować wizyty, na dzień, który już minął");
+    document.getElementById("date").value = "";
+    document.getElementById("Hour").innerHTML = "";
+  }
+  else if(d > to_date)
+  {
+    alert("Maksymalnie możesz zarezerwować wizytę na 3 tygodnie do przodu od dzisiaj.");
+    document.getElementById("date").value = "";
+    document.getElementById("Hour").innerHTML = "";
+  }
+  else{
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -33,6 +50,7 @@ function getAvailableHours(select_date) {
     };
     xmlhttp.open("GET", "php/availableHours.php?q="+select_date, true);
     xmlhttp.send();
+  }
 }
 </script>
 </head>
