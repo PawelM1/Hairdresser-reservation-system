@@ -1,4 +1,8 @@
 <?php
+//if payment not successfull
+if(isset($_GET['error'])){
+header('Location: reservation_status_page/unsuccessful.php');
+}
 require_once('php/functions.php');
 ?>
 <!doctype html>
