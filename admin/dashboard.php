@@ -13,11 +13,17 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Add srcipt and font with polish characters to generate pdf raport -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.3/jspdf.plugin.autotable.min.js"></script>
+    <script src="expressway-normal.js"></script>
 
     <title>Dashboard</title>
 </head>
@@ -30,9 +36,16 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="col-12">
+        <div class = "d-flex justify-content-center mt-5">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtruj według daty" title="Type in a name" class = " mr-4">
+            <button class="btn btn-primary" onclick="demoFromHTML()">Generuj PDF</button>
+        </div>
+    </div>
+
+    <div class="container mt-3">
         <div class="row">
-            <table class="table bg-secondary text-white">
+            <table id="myTable" class="table bg-secondary text-white">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col"></th>
@@ -65,6 +78,43 @@ die("Nie uzyskano dostępu. Nie zalogowano się poprawnie");
         </div>
     </div>
     <!-- Optional JavaScript -->
+    <!-- Search Filter -->
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[4];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        } 
+    </script>
+
+    <!-- Generate PDF -->    
+    <script type="text/javascript">
+        function demoFromHTML() {
+            var doc = new jsPDF()
+            doc.text('Lista rezerwacji', 15, 10)
+            doc.setFont('expressway');
+            doc.autoTable({
+                html: '#myTable',
+                headerStyles: { fontStyle: 'expressway' },
+                styles: {font: 'expressway'}
+                })
+           doc.save('Reservation.pdf')
+        }
+    </script>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
