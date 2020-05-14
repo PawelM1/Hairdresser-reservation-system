@@ -20,6 +20,5 @@ $hint = "";
     $hint .= '<option value = "'.$r['id'].'">'.$r['Hour'].'</option>';
 }
 
-// Output "no suggestion" if no hint was found or output correct values
 echo $hint;
 ?>
