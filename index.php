@@ -41,6 +41,11 @@ function getAvailableHours(select_date) {
     document.getElementById("date").value = "";
     document.getElementById("Hour").innerHTML = "";
   }
+  else if(d.getDay() == 0 || d.getDay() == 6){
+    alert("W weekendy nie pracujemy. Zapraszamy w inne dni");
+    document.getElementById("date").value = "";
+    document.getElementById("Hour").innerHTML = "";
+  }
   else{
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
