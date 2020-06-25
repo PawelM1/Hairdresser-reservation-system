@@ -270,7 +270,7 @@ function getAvailableHours(select_date) {
           </div>              
       </div>
       <div class="footer-copyright text-center text-white font-weight-bold">
-          Strona wykonana w ramach projektu z przedmiotu: Technologie Internetowe
+          Strona wykonana w ramach projektu z przedmiotu: Aplikacje Internetowe
       </div>            
   </Footer>
   <!--Footer-->

@@ -64,6 +64,7 @@ function make_pay($name, $surname,$phone,$typeHairCut, $reservation_id)
         }
     }
 
+    //Using OpenPayu_php SDK for payment, If you want it to work properly, you have to configure it yourself
     require_once(__DIR__.'\..\openpayu_php\lib\openpayu.php');
     require_once(__DIR__.'\..\openpayu_php\examples\config.php');
     $order['continueUrl'] = 'http://localhost/barber/reservation_status_page/successful.php'; //customer will be redirected to this page after successfull payment
